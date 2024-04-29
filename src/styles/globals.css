@@ -1,50 +1,50 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-@layer base {
-  * {
-    @apply font-sans;
+  @layer base {
+    * {
+      @apply font-sans;
+    }
+  
+    :root {
+      --height-header: 93px;
+  
+      --color-white: 255, 255, 255; /* #ffffff */
+      --color-black: 0, 1, 18; /* #000112 */
+  
+      --color-primary: 99, 95, 199; /* #635FC7 */
+      --color-primary-light: 168, 164, 255; /* #A8A4FF */
+  
+      --color-gray-300: 244, 247, 253; /* #F4F7FD */
+      --color-gray-400: 228, 235, 250; /* #E4EBFA */
+      --color-gray-500: 130, 143, 163; /* #828FA3 */
+      --color-gray-700: 62, 63, 78; /* #3E3F4E */
+      --color-gray-800: 43, 44, 55; /* #2B2C37 */
+      --color-gray-900: 32, 33, 44; /* #20212C */
+  
+      --color-red-100: 255, 152, 152; /* #FF9898 */
+      --color-red-200: 234, 85, 85; /* #EA5555 */
+  
+  
+      /* Components colors */
+  
+      /* Main */
+      --color-background: var(--color-gray-500);
+  
+      /* Button */
+      --color-button-bg: var(--color-primary);
+      --color-button-text: var(--color-white);
+      --color-button-hover-bg: var(--color-primary-light);
+  
+  
+      /* Nav */
+      --color-navbar-bg: var(--color-white);
+      --color-navbar-text: var(--color-gray-500);
+      --color-navbar-border: var(--color-gray-400);
+      --color-navbar-hover-bg: var(--color-primary-light);
+      --color-navbar-selected-bg: var(--color-primary);
+      --color-navbar-selected-text: var(--color-white);
+      --color-navbar-new: var(--color-primary);
+    }
   }
-
-  :root {
-    --height-header: 93px;
-
-    --color-white: 255, 255, 255; /* #ffffff */
-    --color-black: 0, 1, 18; /* #000112 */
-
-    --color-primary: 99, 95, 199; /* #635FC7 */
-    --color-primary-light: 168, 164, 255; /* #A8A4FF */
-
-    --color-gray-300: 244, 247, 253; /* #F4F7FD */
-    --color-gray-400: 228, 235, 250; /* #E4EBFA */
-    --color-gray-500: 130, 143, 163; /* #828FA3 */
-    --color-gray-700: 62, 63, 78; /* #3E3F4E */
-    --color-gray-800: 43, 44, 55; /* #2B2C37 */
-    --color-gray-900: 32, 33, 44; /* #20212C */
-
-    --color-red-100: 255, 152, 152; /* #FF9898 */
-    --color-red-200: 234, 85, 85; /* #EA5555 */
-
-
-    /* Components colors */
-
-    /* Main */
-    --color-background: var(--color-gray-500);
-
-    /* Button */
-    --color-button-bg: var(--color-primary);
-    --color-button-text: var(--color-white);
-    --color-button-hover-bg: var(--color-primary-light);
-
-
-    /* Nav */
-    --color-navbar-bg: var(--color-white);
-    --color-navbar-text: var(--color-gray-500);
-    --color-navbar-border: var(--color-gray-400);
-    --color-navbar-hover-bg: var(--color-primary-light);
-    --color-navbar-selected-bg: var(--color-primary);
-    --color-navbar-selected-text: var(--color-white);
-    --color-navbar-new: var(--color-primary);
-  }
-}

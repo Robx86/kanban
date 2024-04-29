@@ -17,6 +17,15 @@ export default {
       black: "rgb(var(--color-black), <alpha-value>)",
       primary: "rgb(var(--color-primary), <alpha-value>)",
       primaryLight: "rgb(var(--color-primary-light), <alpha-value>)",
+      gray: {
+        300: "rgb(var(--color-gray-300), <alpha-value>)",
+        400: "rgb(var(--color-gray-400), <alpha-value>)",
+        500: "rgb(var(--color-gray-500), <alpha-value>)",
+        600: "rgb(var(--color-gray-600), <alpha-value>)",
+        700: "rgb(var(--color-gray-700), <alpha-value>)",
+        800: "rgb(var(--color-gray-800), <alpha-value>)",
+        900: "rgb(var(--color-gray-900), <alpha-value>)",
+      },
       navbar: {
         text: "rgb(var(--color-navbar-text), <alpha-value>)",
         bg: "rgb(var(--color-navbar-bg), <alpha-value>)",
@@ -30,7 +39,7 @@ export default {
       button: {
         bg: "rgb(var(--color-button-bg), <alpha-value>)",
         text: "rgb(var(--color-button-text), <alpha-value>)",
-        hover: "rgb(var(--color-button-hover), <alpha-value>)",
+        hover: "rgb(var(--color-button-hover-bg), <alpha-value>)",
       },
     },
   },
