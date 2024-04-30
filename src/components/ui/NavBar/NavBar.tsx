@@ -83,7 +83,7 @@ const NavBar = ({ children }: NavBarProps) => {
             <Button>+ Add New Task</Button>
           </div>
         </div>
-        <div className="w-full h-full">{children}</div>
+        <div className="w-full h-full bg-body-background">{children}</div>
       </div>
     </div>
   );

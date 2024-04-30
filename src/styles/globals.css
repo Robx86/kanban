@@ -31,7 +31,9 @@
       /* Components colors */
   
       /* Main */
-      --color-background: var(--color-gray-500);
+      --color-background: var(--color-gray-300);
+
+      --color-body-text-secondary: var(--color-gray-500);
   
       /* Button */
       --color-button-bg: var(--color-primary);

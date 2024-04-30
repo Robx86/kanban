@@ -8,6 +8,8 @@ export default {
         "heading-lg": ["18px", "23px"],
         "heading-md": ["15px", "19px"],
         "heading-sm": ["12px", "15px", "2.4px"],
+        "body-lg": ["13px", "23px"],
+        "body-md": ["12px", "15px"],
       },
     },
     colors: {
@@ -17,6 +19,12 @@ export default {
       black: "rgb(var(--color-black), <alpha-value>)",
       red: "rgb(var(--color-red-200), <alpha-value>)",
       'light-red': "rgb(var(--color-red-100), <alpha-value>)",
+      body: {
+        text: {
+          secondary: "rgb(var(--color-body-text-secondary), <alpha-value>)",
+        },
+        background: "rgb(var(--color-background), <alpha-value>)",
+      },
       primary: "rgb(var(--color-primary), <alpha-value>)",
       primaryLight: "rgb(var(--color-primary-light), <alpha-value>)",
       gray: {
