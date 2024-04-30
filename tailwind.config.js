@@ -15,6 +15,8 @@ export default {
       current: "currentColor",
       white: "rgb(var(--color-white), <alpha-value>)",
       black: "rgb(var(--color-black), <alpha-value>)",
+      red: "rgb(var(--color-red-200), <alpha-value>)",
+      'light-red': "rgb(var(--color-red-100), <alpha-value>)",
       primary: "rgb(var(--color-primary), <alpha-value>)",
       primaryLight: "rgb(var(--color-primary-light), <alpha-value>)",
       gray: {
@@ -36,10 +38,23 @@ export default {
         },
         new: "rgb(var(--color-navbar-new), <alpha-value>)",
       },
+      input: {
+        border: "rgba(var(--color-input-border), 0.25)",
+      }, 
       button: {
         bg: "rgb(var(--color-button-bg), <alpha-value>)",
         text: "rgb(var(--color-button-text), <alpha-value>)",
         hover: "rgb(var(--color-button-hover-bg), <alpha-value>)",
+        destructive: {
+          bg: "rgb(var(--color-button-destructive-bg), <alpha-value>)",
+          text: "rgb(var(--color-button-destructive-text), <alpha-value>)",
+          hover: "rgb(var(--color-button-destructive-hover-bg), <alpha-value>)",
+        },
+        secondary: {
+          bg: "rgba(var(--color-button-bg), 0.1)",
+          text: "rgba(var(--color-button-bg), <alpha-value>)",
+          hover: "rgba(var(--color-button-hover-bg), 0.25)",
+        },
       },
     },
   },

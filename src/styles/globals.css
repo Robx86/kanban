@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   @layer base {
     * {
@@ -14,6 +14,8 @@
       --color-black: 0, 1, 18; /* #000112 */
   
       --color-primary: 99, 95, 199; /* #635FC7 */
+      --color-primary-50: 99, 95, 199, 0.1; /* #635FC7 with 10% opacity */
+      --color-primary-100: 99, 95, 199, 0.25; /* #635FC7 with 25% opacity */
       --color-primary-light: 168, 164, 255; /* #A8A4FF */
   
       --color-gray-300: 244, 247, 253; /* #F4F7FD */
@@ -26,7 +28,6 @@
       --color-red-100: 255, 152, 152; /* #FF9898 */
       --color-red-200: 234, 85, 85; /* #EA5555 */
   
-  
       /* Components colors */
   
       /* Main */
@@ -36,7 +37,10 @@
       --color-button-bg: var(--color-primary);
       --color-button-text: var(--color-white);
       --color-button-hover-bg: var(--color-primary-light);
-  
+
+      --color-button-destructive-bg: var(--color-red-200);
+      --color-button-destructive-text: var(--color-white);
+      --color-button-destructive-hover-bg: var(--color-red-100);  
   
       /* Nav */
       --color-navbar-bg: var(--color-white);
@@ -46,5 +50,7 @@
       --color-navbar-selected-bg: var(--color-primary);
       --color-navbar-selected-text: var(--color-white);
       --color-navbar-new: var(--color-primary);
+
+      --color-input-border: var(--color-gray-500, 0.25);
     }
   }
