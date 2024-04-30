@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button/Button";
 import Card from "./components/Card/Card";
 function App() {
   return (
-    <div className="bg-background h-full">
+    <div className="bg-background h-full pl-[0.5625rem]">
       {mockBoard.columns.length > 0 ? (
         <div className="flex h-full">
           {mockBoard.columns.map((column) => (
@@ -37,7 +37,7 @@ function App() {
               )}
             </div>
           ))}
-          <div className="text-body-text-secondary font-bold h-full flex justify-center items">+ New Column</div>
+          <div className="text-body-text-secondary font-bold flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] rounded-md items-center text-heading-xl mt-16 ml-3">+ New Column</div>
         </div>
       ) : (
         <div className="bg-gray-300 w-full h-full flex items-center justify-center flex-col">

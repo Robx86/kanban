@@ -75,7 +75,7 @@ const NavBar = ({ children }: NavBarProps) => {
       </div>
 
       <div className="flex flex-col flex-1 overflow-y-auto">
-        <div className="flex items-center justify-between h-24 bg-white border-b border-navbar-border">
+        <div className="flex items-center justify-between min-h-24 bg-white border-b border-navbar-border">
           <div className="flex items-center px-4 text-heading-xl font-bold">
             Platform Launch
           </div>
@@ -83,7 +83,7 @@ const NavBar = ({ children }: NavBarProps) => {
             <Button>+ Add New Task</Button>
           </div>
         </div>
-        <div className="w-full h-full bg-body-background">{children}</div>
+        <div className="w-full min-h-full bg-body-background">{children}</div>
       </div>
     </div>
   );
