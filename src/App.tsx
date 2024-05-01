@@ -45,15 +45,11 @@ function App() {
                       <Card
                         title={task.name}
                         key={id}
-                        todoSubTasks={
-                          task.subTasks.filter(
-                            (subTask) => !subTask.isCompleted
-                          ).length
-                        }
                         doneSubTasks={
                           task.subTasks.filter((subTask) => subTask.isCompleted)
                             .length
                         }
+                        SubTasks={task.subTasks.length}
                         onHandleClick={() => setModal({
                           open: true,
                           task: task,

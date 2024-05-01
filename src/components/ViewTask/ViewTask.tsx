@@ -9,34 +9,50 @@ import {
 } from "../ui/Select/Select";
 import { Dispatch, SetStateAction } from "react";
 import { ViewTaskModal } from "../../App";
+import PlusIcon from "@/assets/icons/plus.svg";
 
 interface ViewTaskProps {
   modal: ViewTaskModal;
   setModal: Dispatch<SetStateAction<ViewTaskModal>>;
 }
 
-const ViewTask = ({modal, setModal} : ViewTaskProps) => {
+const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
   return (
-    <Dialog open={modal.open} onOpenChange={() => setModal((prev) => {
-      return {
-        ...prev,
-        open: !prev.open,
-      };
-    })}>
+    <Dialog
+      open={modal.open}
+      onOpenChange={() =>
+        setModal((prev) => {
+          return {
+            ...prev,
+            open: !prev.open,
+          };
+        })
+      }
+    >
       <DialogContent className="max-w-[480px]">
         <div>
           <div className="flex w-full flex-col items-center justify-between rounded-lg bg-white">
             <div className="flex w-full flex-col">
-              <span className="font-bold text-heading-lg">
-                {modal.task.name}
-              </span>
+              <div className="flex justify-between">
+                <span className="font-bold text-heading-lg">
+                  {modal.task.name}
+                </span>
+                <img
+                  src={PlusIcon}
+                  alt="close"
+                  className="cursor-pointer ml-6"
+                />
+              </div>
+
               <span className="flex">
                 <span className="text-body-text-secondary my-6 text-body-lg">
                   {modal.task.description}
                 </span>
               </span>
               <span className="text-body-text-secondary text-body-md">
-                Subtasks (2 of 3)
+                Subtasks (
+                {modal.task.subTasks.filter((subTask) => subTask.isCompleted).length} of{" "}
+                {modal.task.subTasks.length})
               </span>
               <div className="flex flex-col gap-2 mt-4 mb-6">
                 {modal.task.subTasks.map((subTask, id) => (
