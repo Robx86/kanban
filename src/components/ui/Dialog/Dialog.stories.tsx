@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Dialog, DialogContent } from "@/components/ui/Dialog/Dialog";
-import { Button } from "@/components/ui/Button/Button";
 import {
   Select,
   SelectContent,

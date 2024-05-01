@@ -19,6 +19,7 @@ function App() {
       name: "",
       isCompleted: false,
       subTasks: [],
+      column: "",
     },
   });
   console.log(modal, "modal");
