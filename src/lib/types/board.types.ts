@@ -14,8 +14,10 @@ export type columnTypes = {
 export type taskTypes = {
   id: string;
   name: string;
+  description?: string;
   isCompleted: boolean;
   subTasks: subTaskTypes[];
+  column: string;
 }
 
 export type subTaskTypes = {
