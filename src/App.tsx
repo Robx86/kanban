@@ -7,8 +7,8 @@ import ViewTask from "./components/ViewTask/ViewTask";
 import { taskTypes } from "./lib/types/board.types";
 
 export interface ViewTaskModal {
-  open: boolean,
-  task: taskTypes,
+  open: boolean;
+  task: taskTypes;
 }
 
 function App() {
@@ -51,10 +51,12 @@ function App() {
                             .length
                         }
                         SubTasks={task.subTasks.length}
-                        onHandleClick={() => setModal({
-                          open: true,
-                          task: task,
-                        })}
+                        onHandleClick={() =>
+                          setModal({
+                            open: true,
+                            task: task,
+                          })
+                        }
                       />
                     ))}
                   </div>
@@ -66,8 +68,13 @@ function App() {
               )}
             </div>
           ))}
-          <div className="text-body-text-secondary font-bold flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] rounded-md items-center text-heading-xl mt-16 ml-3">
+          <div className="flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] rounded-md items-center mt-16 ml-3">
+          <Button
+            variant="outline"
+            className="text-body-text-secondary mb-2 font-bold text-xl"
+          >
             + New Column
+          </Button>
           </div>
         </div>
       ) : (
@@ -75,7 +82,12 @@ function App() {
           <div className="mb-8 text-heading-lg text-gray-500 font-bold">
             This board is empty. Create a new column to get started.
           </div>
-          <Button>+ Add New Column</Button>
+          <Button
+            variant="outline"
+            className="text-body-text-secondary text-body-md mb-2"
+          >
+            + Add New Column
+          </Button>
         </div>
       )}
       {modal && <ViewTask modal={modal} setModal={setModal} />}

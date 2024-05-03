@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Logo from "@/assets/logo.svg";
 import { cn } from "@/lib/utils/shadcn.utils";
 import iconNavBar from "@/assets/icons/icon_navbar.svg";
@@ -7,6 +7,7 @@ import MoonIcon from "@/assets/icons/moon.svg";
 import SunIcon from "@/assets/icons/sun.svg";
 import EyeIcon from "@/assets/icons/eye.svg";
 import { Switch } from "@/components/ui/Switch/Switch";
+import NewTask from "@/components/NewTask/NewTask";
 
 const navigation = [
   { name: "Platform Launch", href: "#", current: true },
@@ -19,6 +20,8 @@ interface NavBarProps {
 }
 
 const NavBar = ({ children }: NavBarProps) => {
+  const [modal, setModal] = useState(false);
+
   return (
     <div className="flex h-screen bg-navbar-bg">
       <div className="hidden md:flex flex-col w-[18.75rem] bg-navbar-bg border-r border-navbar-border">
@@ -69,7 +72,10 @@ const NavBar = ({ children }: NavBarProps) => {
               <Switch className="mx-[1.5rem]" />
               <img src={MoonIcon} className="h-[1.125rem] w-[1.125rem]" />
             </div>
-            <div className="mb-[2.9375rem] text-gray-500 flex items-center"><img src={EyeIcon} className="mr-[0.9375rem]" />Hide Sidebar</div>
+            <div className="mb-[2.9375rem] text-gray-500 flex items-center">
+              <img src={EyeIcon} className="mr-[0.9375rem]" />
+              Hide Sidebar
+            </div>
           </div>
         </div>
       </div>
@@ -80,11 +86,12 @@ const NavBar = ({ children }: NavBarProps) => {
             Platform Launch
           </div>
           <div className="flex items-center pr-4">
-            <Button>+ Add New Task</Button>
+            <Button onClick={() => setModal(true)}>+ Add New Task</Button>
           </div>
         </div>
         <div className="w-full min-h-full bg-body-background">{children}</div>
       </div>
+      {modal && <NewTask modal={modal} setModal={setModal}/>}
     </div>
   );
 };
