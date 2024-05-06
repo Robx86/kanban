@@ -25,7 +25,7 @@ function App() {
   console.log(modal, "modal");
 
   return (
-    <div className="bg-background h-full pl-[0.5625rem]">
+    <div className="h-full pl-[0.5625rem]">
       {mockBoard.columns.length > 0 ? (
         <div className="flex h-full">
           {mockBoard.columns.map((column) => (
@@ -68,7 +68,7 @@ function App() {
               )}
             </div>
           ))}
-          <div className="flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] rounded-md items-center mt-16 ml-3">
+          <div className="flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] mr-10 rounded-md items-center mt-16 ml-3">
           <Button
             variant="outline"
             className="text-body-text-secondary mb-2 font-bold text-xl"

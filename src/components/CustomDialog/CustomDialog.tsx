@@ -18,7 +18,7 @@ export type DialogProps = {
   textConfirm: string;
 };
 
-const Dialog = ({title, description, onConfirm, onCancel, textCancel, textConfirm}: DialogProps) => {
+const CustomDialog = ({title, description, onConfirm, onCancel, textCancel, textConfirm}: DialogProps) => {
   return (
     <AlertDialog open={true}>
       <AlertDialogContent className='max-w-[30rem]'>
@@ -36,4 +36,4 @@ const Dialog = ({title, description, onConfirm, onCancel, textCancel, textConfir
     </AlertDialog>
   );
 };
-export default Dialog;
+export default CustomDialog;

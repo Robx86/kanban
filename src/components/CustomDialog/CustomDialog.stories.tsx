@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Dialog from "@/components/Dialog/Dialog";
+import CustomDialog from "@/components/CustomDialog/CustomDialog";
 
-const meta: Meta<typeof Dialog> = {
+const meta: Meta<typeof CustomDialog> = {
   title: "Components/CustomDialog",
-  component: Dialog,
+  component: CustomDialog,
   tags: ["autodocs"],
 };
 
 export default meta;
-type Story = StoryObj<typeof Dialog>;
+type Story = StoryObj<typeof CustomDialog>;
 
 export const Base: Story = {
   args: {

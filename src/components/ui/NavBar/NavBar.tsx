@@ -8,6 +8,14 @@ import SunIcon from "@/assets/icons/sun.svg";
 import EyeIcon from "@/assets/icons/eye.svg";
 import { Switch } from "@/components/ui/Switch/Switch";
 import NewTask from "@/components/NewTask/NewTask";
+import PlusIcon from "@/assets/icons/plus.svg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/DropdownMenu/DropdownMenu";
+import Dialog from "@/components/CustomDialog/CustomDialog";
 
 const navigation = [
   { name: "Platform Launch", href: "#", current: true },
@@ -21,6 +29,7 @@ interface NavBarProps {
 
 const NavBar = ({ children }: NavBarProps) => {
   const [modal, setModal] = useState(false);
+  const [DeleteBoard, setDeleteBoard] = useState(false);
 
   return (
     <div className="flex h-screen bg-navbar-bg">
@@ -87,11 +96,36 @@ const NavBar = ({ children }: NavBarProps) => {
           </div>
           <div className="flex items-center pr-4">
             <Button onClick={() => setModal(true)}>+ Add New Task</Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <img className="ml-6" src={PlusIcon} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="mr-8">
+                <DropdownMenuItem>Editar Board</DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => {
+                    setDeleteBoard(true);
+                  }}
+                >
+                  Deletar Board
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
-        <div className="w-full min-h-full bg-body-background">{children}</div>
+        <div className="w-full min-w-max bg-body-background min-h-max">{children}</div>
       </div>
-      {modal && <NewTask modal={modal} setModal={setModal}/>}
+      {modal && <NewTask modal={modal} setModal={setModal} />}
+      {DeleteBoard && (
+        <Dialog
+          title="Delete this board?"
+          description="Are you sure you want to delete the ‘Platform Launch’ board and all its tasks? This action cannot be reversed."
+          textCancel="Cancel"
+          textConfirm="Delete"
+          onCancel={() => setDeleteBoard(false)}
+          onConfirm={() => {}}
+        />
+      )}
     </div>
   );
 };
