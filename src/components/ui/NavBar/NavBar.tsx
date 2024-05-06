@@ -54,9 +54,9 @@ const NavBar = ({ children }: NavBarProps) => {
                 <a
                   href="#"
                   className={cn(
-                    "flex items-center px-4 bg-navbar-bg text-body-text-secondary hover:bg-button-hover pb-[0.9375rem] pt-[0.9375rem] mr-6 rounded-r-full",
+                    "flex items-center px-4 bg-navbar-bg text-body-text-secondary hover:bg-primary/10 hover:text-primary pb-[0.9375rem] pt-[0.9375rem] mr-6 rounded-r-full",
                     item.current &&
-                      "bg-navbar-selected-bg text-navbar-selected-text"
+                      "bg-navbar-selected-bg text-navbar-selected-text hover:bg-primary hover:text-white"
                   )}
                 >
                   <img
@@ -70,7 +70,7 @@ const NavBar = ({ children }: NavBarProps) => {
               <a
                 href="#"
                 className={cn(
-                  "flex items-center px-4 bg-navbar-bg text-gray-100 hover:bg-button-hover hover:text-white pb-[0.9375rem] pt-[0.9375rem]  mr-6 rounded-r-full",
+                  "flex items-center px-4 bg-navbar-bg text-gray-100 hover:bg-primary/10 hover:text-primary pb-[0.9375rem] pt-[0.9375rem]  mr-6 rounded-r-full",
                   "text-navbar-new"
                 )}
               >
