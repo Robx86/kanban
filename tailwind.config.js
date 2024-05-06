@@ -14,7 +14,7 @@ export default {
     },
     colors: {
       transparent: "transparent",
-      current: "currentColor",
+      currentColor: "currentColor",
       white: "rgb(var(--color-white), <alpha-value>)",
       black: "rgb(var(--color-black), <alpha-value>)",
       red: "rgb(var(--color-red-200), <alpha-value>)",

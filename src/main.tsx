@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "@/styles/globals.css";
 import NavBar from "./components/ui/NavBar/NavBar.tsx";
 
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <>

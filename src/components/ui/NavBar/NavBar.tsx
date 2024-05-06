@@ -47,22 +47,21 @@ const NavBar = ({ children }: NavBarProps) => {
           </div>
           <div className="flex flex-col flex-1 overflow-y-auto items-stretch">
             <nav className="flex-1 bg-navbar-bg text-heading-md font-bold">
-              <div className="font-bold text-heading-sm ml-[2rem] mb-[1.1875rem] text-navbar-text">
+              <div className="font-bold text-heading-sm ml-[2rem] mb-[1.1875rem] text-navbar-text tracking-widest">
                 ALL BOARDS (3)
               </div>
               {navigation.map((item) => (
                 <a
                   href="#"
                   className={cn(
-                    "flex items-center px-4 bg-navbar-bg text-gray-100 hover:bg-button-hover pb-[0.9375rem] pt-[0.9375rem] mr-6 rounded-r-full",
+                    "flex items-center px-4 bg-navbar-bg text-body-text-secondary hover:bg-button-hover pb-[0.9375rem] pt-[0.9375rem] mr-6 rounded-r-full",
                     item.current &&
                       "bg-navbar-selected-bg text-navbar-selected-text"
                   )}
                 >
                   <img
                     src={iconNavBar}
-                    alt="kanban icon"
-                    className="h-4 w-4 text-navbar-text mr-2"
+                    className="h-4 w-4 mr-2"
                   />
                   {item.name}
                 </a>
@@ -146,7 +145,7 @@ const NavBar = ({ children }: NavBarProps) => {
             </DropdownMenu>
           </div>
         </div>
-        <div className="w-full min-w-max bg-body-background min-h-max">
+        <div className="w-full min-w-max bg-body-background min-h-max pb-10">
           {children}
         </div>
       </div>
