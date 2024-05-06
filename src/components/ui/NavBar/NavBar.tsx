@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/DropdownMenu/DropdownMenu";
 import Dialog from "@/components/CustomDialog/CustomDialog";
 import { Separator } from "@/components/ui/Separator/Separator";
+import EditBoard from "@/components/EditBoard/EditBoard";
 
 const navigation = [
   { name: "Platform Launch", href: "#", current: true },
@@ -31,7 +32,8 @@ interface NavBarProps {
 
 const NavBar = ({ children }: NavBarProps) => {
   const [modal, setModal] = useState(false);
-  const [DeleteBoard, setDeleteBoard] = useState(false);
+  const [deleteBoard, setDeleteBoard] = useState(false);
+  const [editBoard, setEditBoard] = useState(false);
   const [hiddenSidebar, setHiddenSidebar] = useState(false);
 
   return (
@@ -59,10 +61,7 @@ const NavBar = ({ children }: NavBarProps) => {
                       "bg-navbar-selected-bg text-navbar-selected-text hover:bg-primary hover:text-white"
                   )}
                 >
-                  <img
-                    src={iconNavBar}
-                    className="h-4 w-4 mr-2"
-                  />
+                  <img src={iconNavBar} className="h-4 w-4 mr-2" />
                   {item.name}
                 </a>
               ))}
@@ -118,7 +117,10 @@ const NavBar = ({ children }: NavBarProps) => {
             {hiddenSidebar && (
               <div className="flex">
                 <img src={Logo} alt="Logo" className="ml-6" />
-                <Separator orientation="vertical" className="ml-6 mr-2 h-full"/>
+                <Separator
+                  orientation="vertical"
+                  className="ml-6 mr-2 h-full"
+                />
               </div>
             )}
             <div className="flex items-center px-4 text-heading-xl font-bold">
@@ -133,8 +135,15 @@ const NavBar = ({ children }: NavBarProps) => {
                 <img className="ml-6" src={PlusIcon} />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="mr-8">
-                <DropdownMenuItem>Editar Board</DropdownMenuItem>
                 <DropdownMenuItem
+                  onClick={() => {
+                    setEditBoard(true);
+                  }}
+                >
+                  Editar Board
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="text-red"
                   onClick={() => {
                     setDeleteBoard(true);
                   }}
@@ -150,7 +159,10 @@ const NavBar = ({ children }: NavBarProps) => {
         </div>
       </div>
       {modal && <NewTask modal={modal} setModal={setModal} />}
-      {DeleteBoard && (
+      {editBoard && (
+        <EditBoard modal={editBoard} setModal={setEditBoard} />
+      )}
+      {deleteBoard && (
         <Dialog
           title="Delete this board?"
           description="Are you sure you want to delete the ‘Platform Launch’ board and all its tasks? This action cannot be reversed."

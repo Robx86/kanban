@@ -13,12 +13,12 @@ import { Button } from "@/components/ui/Button/Button";
 import CloseIcon from "@/assets/icons/close.svg";
 import { Dispatch, SetStateAction } from "react";
 
-interface NewTaskProps {
+interface EditTaskProps {
   modal: boolean;
   setModal: Dispatch<SetStateAction<boolean>>;
 }
 
-const NewTask = ({ modal, setModal }: NewTaskProps) => {
+const EditTask = ({ modal, setModal }: EditTaskProps) => {
   return (
     <Dialog open={modal} onOpenChange={() => setModal(!modal)}>
       <DialogContent className="max-w-[480px]">
@@ -27,7 +27,7 @@ const NewTask = ({ modal, setModal }: NewTaskProps) => {
             <div className="flex w-full flex-col">
               <div>
                 <span className="font-bold text-heading-lg mb-6">
-                  Add New Task
+                  Edit Task
                 </span>
               </div>
               <div className="flex flex-col gap-6 mt-6">
@@ -36,6 +36,7 @@ const NewTask = ({ modal, setModal }: NewTaskProps) => {
                   <Input
                     placeholder="e.g. Take coffee break"
                     className="mt-2"
+                    value={'Add authentication endpoints'}
                   />
                 </div>
                 <div>
@@ -48,13 +49,14 @@ const NewTask = ({ modal, setModal }: NewTaskProps) => {
                 <div>
                   <Label>Subtasks</Label>
                   <div className="flex items-center">
-                    <Input placeholder="e.g. Make coffee" className="mt-2" />
+                    <Input placeholder="e.g. Make coffee" className="mt-2" value='Define user model' />
                     <img src={CloseIcon} className="w-4 h-4 ml-2 mt-2 cursor-pointer" />
                   </div>
                   <div className="flex items-center">
                     <Input
                       placeholder="e.g. Drink coffee & smile"
                       className="mt-2"
+                      value={'Add auth endpoints'}
                     />
                     <img src={CloseIcon} className="w-4 h-4 ml-2 mt-2 cursor-pointer" />
                   </div>
@@ -81,7 +83,7 @@ const NewTask = ({ modal, setModal }: NewTaskProps) => {
                     setModal(false);
                   }}
                 >
-                  Add Task
+                  Edit Task
                 </Button>
               </div>
             </div>
@@ -91,4 +93,4 @@ const NewTask = ({ modal, setModal }: NewTaskProps) => {
     </Dialog>
   );
 };
-export default NewTask;
+export default EditTask;

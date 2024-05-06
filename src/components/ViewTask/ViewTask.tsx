@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/DropdownMenu/DropdownMenu";
 import CustomDialog from "@/components/CustomDialog/CustomDialog";
-
+import EditTask from "../EditTask/EditTask";
 
 interface ViewTaskProps {
   modal: ViewTaskModal;
@@ -25,11 +25,11 @@ interface ViewTaskProps {
 }
 
 const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
-  const [DeleteBoard, setDeleteBoard] = useState(false);
+  const [deleteTask, setDeleteTask] = useState(false);
+  const [editTask, setEditTask] = useState(false);
 
   return (
     <>
-      {" "}
       <Dialog
         open={modal.open}
         onOpenChange={() =>
@@ -59,10 +59,17 @@ const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
                       />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      <DropdownMenuItem>Editar Task</DropdownMenuItem>
                       <DropdownMenuItem
                         onClick={() => {
-                          setDeleteBoard(true);
+                          setEditTask(true);
+                        }}
+                      >
+                        Editar Task
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        className="text-red"
+                        onClick={() => {
+                          setDeleteTask(true);
                         }}
                       >
                         Deletar Task
@@ -109,15 +116,18 @@ const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
           </div>
         </DialogContent>
       </Dialog>
-      {DeleteBoard && (
+      {deleteTask && (
         <CustomDialog
           title="Delete this task?"
           description="Are you sure you want to delete the ‘Build settings UI’ task and its subtasks? This action cannot be reversed."
           textCancel="Cancel"
           textConfirm="Delete"
-          onCancel={() => setDeleteBoard(false)}
+          onCancel={() => setDeleteTask(false)}
           onConfirm={() => {}}
         />
+      )}
+      {editTask && (
+        <EditTask modal={editTask} setModal={setEditTask} />
       )}
     </>
   );
