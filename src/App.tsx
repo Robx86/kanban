@@ -71,7 +71,7 @@ function App() {
           <div className="flex justify-center items h-[50.875rem] w-[17.5rem] bg-[#E9EFFA] mr-10 rounded-md items-center mt-16 ml-3">
           <Button
             variant="outline"
-            className="text-body-text-secondary mb-2 font-bold text-xl"
+            className="text-body-text-secondary mb-2 font-bold text-xl hover:text-primary"
           >
             + New Column
           </Button>
@@ -84,7 +84,7 @@ function App() {
           </div>
           <Button
             variant="outline"
-            className="text-body-text-secondary text-body-md mb-2"
+            className="text-body-text-secondary text-body-md mb-2 hover:text-primary"
           >
             + Add New Column
           </Button>

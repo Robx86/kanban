@@ -8,7 +8,7 @@ export interface SubtaskProps {
 
 const Subtask = ({ children, finished }: SubtaskProps) => {
   return (
-    <div className="px-3 rounded-md flex items-center bg-gray-300">
+    <div className="px-3 rounded-md flex items-center bg-gray-300 hover:bg-primary/25">
       <Checkbox className="mr-4" defaultChecked={finished}/>
       <span
         className={cn(

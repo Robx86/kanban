@@ -55,7 +55,7 @@ const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
                       <img
                         src={PlusIcon}
                         alt="close"
-                        className="cursor-pointer pl-6"
+                        className="cursor-pointer pl-6 border-none"
                       />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
