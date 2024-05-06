@@ -55,17 +55,17 @@ const ViewTask = ({ modal, setModal }: ViewTaskProps) => {
                       <img
                         src={PlusIcon}
                         alt="close"
-                        className="cursor-pointer ml-6"
+                        className="cursor-pointer pl-6"
                       />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      <DropdownMenuItem>Editar Board</DropdownMenuItem>
+                      <DropdownMenuItem>Editar Task</DropdownMenuItem>
                       <DropdownMenuItem
                         onClick={() => {
                           setDeleteBoard(true);
                         }}
                       >
-                        Deletar Board
+                        Deletar Task
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
