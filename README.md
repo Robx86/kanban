@@ -1,4 +1,13 @@
-# Kanban (Em desenvolvimento)
+# Kanban (Under development)
+
+Project carried out for the mentor frontend website
+
+Still missing:
+- [ ] Dark Mode
+- [ ] Data storage for changing Values
+- [ ] Drag and drop
+- [ ] (Maybe) change to Next
+- [ ] loading bar to show subtask progress
 
 ![image](https://github.com/Robx86/kanban/assets/20804662/556686a7-297f-4e67-8666-c86f4fdb9d2d)
 
