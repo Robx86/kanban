@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button/Button";
 import Card from "./components/Card/Card";
 import ViewTask from "./components/ViewTask/ViewTask";
 import { taskTypes } from "./lib/types/board.types";
+import NewColumn from "./components/NewColumn/NewColumn";
 
 export interface ViewTaskModal {
   open: boolean;
@@ -22,7 +23,7 @@ function App() {
       column: "",
     },
   });
-  console.log(modal, "modal");
+  const [modalNewColumn, setModalNewColumn] = useState<boolean>(false);
 
   return (
     <div className="h-full pl-[0.5625rem]">
@@ -72,6 +73,7 @@ function App() {
           <Button
             variant="outline"
             className="text-body-text-secondary mb-2 font-bold text-xl hover:text-primary"
+            onClick={() => setModalNewColumn(true)}
           >
             + New Column
           </Button>
@@ -85,12 +87,16 @@ function App() {
           <Button
             variant="outline"
             className="text-body-text-secondary text-body-md mb-2 hover:text-primary"
+            onClick={() => setModalNewColumn(true)}
           >
             + Add New Column
           </Button>
         </div>
       )}
       {modal && <ViewTask modal={modal} setModal={setModal} />}
+      {modalNewColumn && (
+        <NewColumn modal={modalNewColumn} setModal={setModalNewColumn}/>
+      )}
     </div>
   );
 }

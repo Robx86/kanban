@@ -2,14 +2,17 @@ import { Dialog, DialogContent } from "@/components/ui/Dialog/Dialog";
 import { Label } from "@/components/ui/Label/Label";
 import { Input } from "@/components/ui/Input/Input";
 import { Button } from "@/components/ui/Button/Button";
+import { Dispatch, SetStateAction } from "react";
 
 interface NewColumnProps {
   modal: boolean;
+  setModal: Dispatch<SetStateAction<boolean>>;
+
 }
 
-const NewColumn = ({ modal = true }: NewColumnProps) => {
+const NewColumn = ({ modal, setModal }: NewColumnProps) => {
   return (
-    <Dialog open={modal}>
+    <Dialog open={modal} onOpenChange={setModal}>
       <DialogContent className="max-w-[480px]">
         <div>
           <div className="flex w-full flex-col items-center justify-between rounded-lg bg-white">
