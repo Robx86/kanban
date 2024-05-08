@@ -10,4 +10,9 @@ const meta: Meta<typeof NewColumn> = {
 export default meta;
 type Story = StoryObj<typeof NewColumn>;
 
-export const Base: Story = {};
+export const Base: Story = {
+  args: {
+    modal: true,
+    setModal: () => {},
+  },
+};

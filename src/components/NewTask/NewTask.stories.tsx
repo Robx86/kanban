@@ -10,4 +10,9 @@ const meta: Meta<typeof NewTask> = {
 export default meta;
 type Story = StoryObj<typeof NewTask>;
 
-export const Base: Story = {};
+export const Base: Story = {
+  args: {
+    modal: true,
+    setModal: () => {},
+  },
+};
