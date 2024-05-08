@@ -2,6 +2,8 @@
 
 Project under development for [mentor's front-end](https://frontendmentor.io/)
 
+Link to visit the project: https://kanban-r5r6hlm75-robx86s-projects.vercel.app/#
+
 ## Prerequisites
 
 Before you begin, make sure you have Node.js and npm installed on your machine.
